@@ -25,14 +25,12 @@ public class DrivingCost {
             double gallonsUsed = console.nextDouble();
             if(gallonsUsed < 0 && gallonsUsed != -1) {
                 System.out.println("Error: Gallons used cannot be negative. Exiting...");
-                System.exit(0);
             }
             if(gallonsUsed == -1) break; // if the user entered -1, exit the loop and do overall calculations
             System.out.print("Enter the miles driven: ");
             int milesDriven = console.nextInt(); // get the number of miles driven
             if(milesDriven < 0) {
                 System.out.println("Error: Miles driven cannot be negative. Exiting...");
-                System.exit(0);
             }
             // Output MPG for this loop
             System.out.printf("The miles / gallon for this tank was %.1f\n\n", ((double)milesDriven / gallonsUsed));
@@ -42,6 +40,7 @@ public class DrivingCost {
         }
 
         // Output totals
-        System.out.printf("The overall average miles/gallon was %.1f", ((double)totalMilesDriven / totalGallonsUsed));
+        if(totalGallonsUsed == 0) System.out.println("Total gallons used is 0, calculation could not be performed.");
+        else System.out.printf("The overall average miles/gallon was %.1f", ((double)totalMilesDriven / totalGallonsUsed));
     } // end main method
 } // end class

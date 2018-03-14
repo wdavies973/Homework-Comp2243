@@ -11,6 +11,26 @@ public class LockerProblem {
 
     public static void main(String[] args) {
 
+        int x = 2 ;
+        int y = 5;
+        switch (x) {
+            case 1:
+                y++;
+                break;
+            case 2:
+                y = y - 2;
+            case 3:
+                y = y + 10;
+                break;
+            case 4:
+                y = y + 3;
+                break;
+        }
+        System.out.println(y);
+
+
+        if(true) return;
+
         // false = closed, true = open
         boolean[] lockers = new boolean[1000];
         for(int i = 0; i < lockers.length; i++) {
