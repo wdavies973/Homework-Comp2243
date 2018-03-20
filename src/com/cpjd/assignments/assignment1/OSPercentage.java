@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class OSPercentage {
    public static void main(String[] args) {
        //declare variables
-       double total;
+       int total;
        double percentMac;
        double percentLinux;
        double percentWindows;
@@ -36,9 +36,9 @@ public class OSPercentage {
        //calculate total and percentages
        // although total can only be an integer, it will mess up the calculates below if it's not stored as a double
        total = numMacs + numLinux + numWindows;
-       percentMac = numMacs / total * 100;
-       percentLinux = numLinux / total * 100;
-       percentWindows = numWindows / total * 100;
+       percentMac = (double)numMacs / total * 100;
+       percentLinux = (double)numLinux / total * 100;
+       percentWindows = (double)numWindows / total * 100;
        
        //output info
        System.out.println("\nThe computer information:\n***********************************");
