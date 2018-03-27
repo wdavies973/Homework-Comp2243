@@ -1,7 +1,6 @@
 package com.cpjd.assignments.assignment5;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -22,24 +21,26 @@ public class EmployeeSalary {
 
         // Process the file
         try {
-            ArrayList<String> output = new ArrayList<>();
+            // There are 6 employees, so pre-allocate the array for 6
+            String[] output = new String[6];
 
             FileInputStream fis = new FileInputStream(employeeData);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
             String line;
-            while((line = reader.readLine()) != null) {
+            for(int i = 0; (line = reader.readLine()) != null; i++) {
                 String[] tokens = line.split("\\s+"); // split the strings into 4 tokens for each line (first, last, salary, rate)
                 // Calculate the new salary
-                double newSalary = Integer.parseInt(tokens[2]);
-                newSalary = newSalary * (100 + Integer.parseInt(tokens[3]));
-                output.add(tokens[0]+"\t"+tokens[1]+"\t"+tokens[2]+"\t"+tokens[3]+"\t"+newSalary);
+                double newSalary = Double.parseDouble(tokens[2]);
+                newSalary = newSalary * (1 + Double.parseDouble(tokens[3]) / 100);
+                output[i] = tokens[0]+"\t"+tokens[1]+"\t"+tokens[2]+"\t"+tokens[3]+"\t"+newSalary;
             }
 
             // Output the new file in the same directory as the current file
-            File outputFile = new File(employeeData.getParentFile()+"/employeeData2.txt");
-            outputFile.createNewFile();
-            PrintWriter writer = new PrintWriter(new FileOutputStream(outputFile));
-            for(String data : output) writer.write(data);
+            // Write to the same file, using the FileOutputStream
+            fis.close();
+            PrintWriter writer = new PrintWriter(new FileOutputStream(employeeData));
+            for(String data : output) writer.println(data);
+            writer.close();
         } catch(Exception e) {
             e.printStackTrace();
             System.out.println("An error occurred while reading the data file.");
