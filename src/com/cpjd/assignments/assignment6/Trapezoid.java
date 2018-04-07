@@ -3,7 +3,7 @@ package com.cpjd.assignments.assignment6;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # Trapezoid.java
+ Assignment: #6 Trapezoid.java
  Course: comp2243-31
  Description: Demonstrates object orientated concepts
 */

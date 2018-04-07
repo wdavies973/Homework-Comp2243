@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # ShadedRegion.java
+ Assignment: #6 ShadedRegion.java
  Course: comp2243-31
  Description: Client for circle / trapezoid problem
 */

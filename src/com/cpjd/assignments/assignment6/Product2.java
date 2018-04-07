@@ -3,7 +3,7 @@ package com.cpjd.assignments.assignment6;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # Product2.java
+ Assignment: #6 Product2.java
  Course: comp2243-31
  Description: Product object for part 3, named it product2 since Product name is used by a different assignment requirement
 */

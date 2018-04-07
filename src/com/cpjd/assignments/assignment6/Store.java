@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # Store.java
+ Assignment: #6 Store.java
  Course: comp2243-31
  Description: Client app for part 2 of assignment 6
 */

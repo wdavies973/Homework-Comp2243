@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # CashRegister.java
+ Assignment: #6 CashRegister.java
  Course: comp2243-31
  Description: Client for part 3 of assignment 6
 */
