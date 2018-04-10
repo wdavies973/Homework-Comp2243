@@ -3,7 +3,7 @@ package com.cpjd.assignments.assignment6;
 /*
  Author: Will Davies
  Date: 3/27/2018
- Assignment: # Circle.java
+ Assignment: #6 Circle.java
  Course: comp2243-31
  Description: Demonstrates object orientated concepts
 */
