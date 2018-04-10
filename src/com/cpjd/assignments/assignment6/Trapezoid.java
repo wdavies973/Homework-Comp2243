@@ -11,7 +11,9 @@ public class Trapezoid {
 
     private double base1, base2, height;
 
-    public Trapezoid() {}
+    public Trapezoid() {
+        this(0, 0, 0);
+    }
 
     public Trapezoid(double base1, double base2, double height) {
         this.base1 = base1;

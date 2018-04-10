@@ -14,7 +14,10 @@ public class ShadedRegion {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 
-        double radius, base1, base2, height;
+        double radius;
+        double base1;
+        double base2;
+        double height;
 
         System.out.print("Enter circle radius: ");
         radius = console.nextDouble();

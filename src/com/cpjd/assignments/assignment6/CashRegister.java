@@ -14,7 +14,8 @@ public class CashRegister {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 
-        Product2[] products = new Product2[0];
+        double totalPriceBeforeTax = 0;
+        double totalPriceAfterTax = 0;
 
         while(true) {
             System.out.println("******************Cash Register**********************");
@@ -36,29 +37,25 @@ public class CashRegister {
                     int unitsToPurchase = console.nextInt();
                     Product2 product = new Product2(productName, unitPrice, unitsToPurchase);
                     System.out.println("\n"+product); // toString() called automatically
-                    products = addProduct(products, product);
+                    totalPriceAfterTax += product.computePriceBeforeTax();
+                    totalPriceBeforeTax += product.computePriceBeforeTax();
                     break;
                 case 2:
                     System.out.println("-------------------------- RECEIPT -----------------------------");
-                    double totalBeforeTax = 0;
-                    double totalAfterTax = 0;
-                    for(Product2 product2 : products) {
-                        totalBeforeTax +=  product2.computePriceBeforeTax();
-                        totalAfterTax += product2.computePriceAfterTax();
-                        System.out.println(product2);
-                    }
-                    System.out.printf("Total purchase price before tax: %.2f\n", totalBeforeTax);
+                    System.out.printf("Total purchase price before tax: %.2f\n", totalPriceBeforeTax);
                     System.out.println("Sales Tax Rate: "+Product2.SALES_TAX);
-                    System.out.printf("Total purchase price after tax: %.2f", totalAfterTax);
-                    return; // stop the program
+                    System.out.printf("Total purchase price after tax: %.2f", totalPriceAfterTax);
+                    // Reset variables for next customer
+                    totalPriceAfterTax = 0;
+                    totalPriceBeforeTax = 0;
+
                 default:
                     return; // stop the program
             }
         }
-
     } // end main method
 
-    // Resize the array and adds a new item
+    // Resize the array and adds a new item, OLD METHOD, professor didn't like this
     private static Product2[] addProduct(Product2[] products, Product2 newProduct) {
         Product2[] temp = new Product2[products.length + 1];
         for(int i = 0; i < products.length; i++) {

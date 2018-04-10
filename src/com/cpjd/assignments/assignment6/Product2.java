@@ -17,7 +17,9 @@ public class Product2 {
 
     public static final double SALES_TAX = 0.0675;
 
-    public Product2() {}
+    public Product2() {
+        this("", 0, 0);
+    }
 
     public Product2(String productName, double unitPrice, int unitsToPurchase) {
         this.productName = productName;
@@ -45,13 +47,7 @@ public class Product2 {
 
     @Override
     public String toString() {
-        return "Product2{" +
-                "productName='" + productName + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", unitsToPurchase=" + unitsToPurchase +
-                ", price before tax=$" + computePriceBeforeTax() +
-                ", price after tax=$" + computePriceAfterTax() +
-                '}';
+        return "productName=" + productName + ", unitPrice=" + unitPrice + ", unitsToPurchase=" + unitsToPurchase + ", price before tax=$" + computePriceBeforeTax() + ", price after tax=$" + computePriceAfterTax();
     }
 
     public String getProductName() {

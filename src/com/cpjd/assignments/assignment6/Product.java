@@ -14,7 +14,9 @@ public class Product {
     private double unitPrice;
     private int unitsSold;
 
-    public Product() {}
+    public Product() {
+        this(0, "", 0, 0);
+    }
 
     public Product(int productNumber, String productName, double unitPrice, int unitsSold) {
         this.productNumber = productNumber;
@@ -29,13 +31,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "productNumber=" + productNumber +
-                ", productName='" + productName + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", unitsSold=" + unitsSold +
-                ", purchasePrice="+computePurchasePrice() +
-                '}';
+        return "productNumber=" + productNumber + ", productName=" + productName + ", unitPrice=" + unitPrice + ", unitsSold=" + unitsSold + ", purchasePrice="+computePurchasePrice();
     }
 
     public int getProductNumber() {

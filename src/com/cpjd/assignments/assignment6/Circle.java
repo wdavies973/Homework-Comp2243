@@ -11,7 +11,9 @@ public class Circle {
 
     private double radius;
 
-    public Circle() {}
+    public Circle() {
+        this(0);
+    }
 
     public Circle(double radius) {
         this.radius = radius;
@@ -35,9 +37,6 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", area="+computeArea() +
-                '}';
+        return "Circle" + "radius=" + radius + ", area="+computeArea();
     }
 } // end class
